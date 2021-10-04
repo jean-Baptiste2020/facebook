@@ -1,0 +1,12 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+       <h1>Login Facebook </h1> 
+    </div>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <%= f.email_field :email, id: "login", class: "fadeIn second", placeholder: "Chabla@gmail.com" %>
+        <%= f.password_field :password, id: "password", class: "fadeIn third", placeholder:"password" %>
+        <%= f.submit "Log in", class: "fadeIn fourth" %>
+      <% end %>
+  </div>
+</div>

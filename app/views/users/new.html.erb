@@ -1,0 +1,25 @@
+
+<div class="wrapper fadeInDown">
+<div id="formContent">
+    <div class="fadeIn first">
+       <h1>Sign Up Facebook </h1> 
+    </div>      
+        <% if @user.errors.any?%> 
+        <div id= "error_explanation"> 
+        <h2> <%= pluralize(@user.errors.count, "error")%> a interdit l'enregistrement de ce <%= @user.name%>: </h2> 
+        <ul> 
+        <% @user.errors.full_messages.each do | message |%> 
+        <li> <%= message%> </li> 
+        <% end%> 
+        </ul> 
+        </div> 
+        <%end%> 
+        <%= form_with(model: @user, local: true) do | f |%> 
+            <%= f.text_field :name, id: "login", class: "fadeIn second", placeholder: "Name"%> 
+            <%= f.email_field :email, id: "login", class: "fadeIn second", placeholder: "Chabla@gmail.com"%>
+            <%= f.password_field :password, id: "password", class: "fadeIn third", placeholder:"password"%> 
+            <%= f.password_field :password_confirmation, id: "password", class: "fadeIn third", placeholder:"password"%>
+        <%= f.submit "Créer mon compte", class: "fadeIn fourth"%> 
+        <%end%>
+    </div>
+</div>

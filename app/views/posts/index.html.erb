@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table class="table table-bordered table-striped table-responsive">
+  <thead>
+    <tr >
+      <th style="color:blue; font-size: 20px;">Image</th>
+      <th style="color:blue; font-size: 20px;">Content</th>
+      <th style="color:blue; font-size: 20px;">Auteur</th>
+      <th style="color:blue; font-size: 20px;">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.image %></td>
+        <td><%= post.content %></td>
+        <td><%= post.user %></td>
+        <td><%= link_to 'Show', post, class: "badge bg-success" %>
+        <% if current_user.id == post.user_id %> 
+          <%= link_to 'Edit', edit_post_path(post), class: "badge bg-warning" %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "badge bg-danger" %>
+        <% end %> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
