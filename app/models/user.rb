@@ -13,3 +13,4 @@ class User < ApplicationRecord
      name
     end
 end
+
