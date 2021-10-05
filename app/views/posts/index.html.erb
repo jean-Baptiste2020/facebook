@@ -19,6 +19,7 @@
         <td><%= post.content %></td>
         <td><%= post.user %></td>
         <td><%= link_to 'Show', post, class: "badge bg-success" %>
+        <a href="/favorite/<%=post.id %>" class="badge bg-info"> favorite </a>
         <% if current_user.id == post.user_id %> 
           <%= link_to 'Edit', edit_post_path(post), class: "badge bg-warning" %>
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "badge bg-danger" %>

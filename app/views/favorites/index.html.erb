@@ -1,0 +1,11 @@
+<h1>Vos images favories</h1>
+<div class="container" >
+    <div class= "row">
+        <% @favorites.each do |favor| %>
+            <div class="col-2" >
+               <%= image_tag(favor.image) %>
+            </div>
+        <% end %>
+    </div>
+</div>
+<%= link_to "redirect to posts", posts_path, class: "btn btn-success" %>
