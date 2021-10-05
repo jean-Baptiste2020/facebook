@@ -7,3 +7,4 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+
