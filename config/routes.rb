@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   get "/favorite/:id", to: "favorites#create"
   get "/favorites", to: "favorites#index"
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
